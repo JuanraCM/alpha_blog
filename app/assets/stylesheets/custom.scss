@@ -1,0 +1,63 @@
+@import 'custom-bootstrap';
+
+#logo {
+	float: left;
+	font-weight: bold;
+	font-size: 1.5em;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	color: #fff;
+}
+
+#logo:hover {
+	color: #c8cbd1;
+	text-decoration: none;
+}
+
+.center {
+	text-align: center;
+}
+
+.jumbotron {
+	background-image: asset-url('home_background.jpg');
+	background-size: cover;
+	height: 550px;
+	margin: 20px;
+}
+
+.jumbotron h1 {
+	color: #fff;
+	margin-bottom: 30px;
+	letter-spacing: -1px;
+	font-weight: bold;
+}
+
+.btn-xlarge {
+	font-size: 1.3em;
+	font-style: italic;
+	background-color: #65686b;
+}
+
+#btn-sign-up {
+	margin-top: 300px;
+}
+
+footer {
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid #eaeaea;
+	color: #606060;
+}
+
+footer a:hover {
+	color: black;
+}
+
+footer small {
+	float: left;
+}
+
+footer ul {
+	float: right;
+	list-style: none;
+}
