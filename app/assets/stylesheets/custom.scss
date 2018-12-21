@@ -62,11 +62,20 @@
 
 #description-container {
 	padding: 20px;
+	margin-bottom: 20px;
 }
 
 .article-actions {
 	border-top: 1px solid #eaeaea;
 	padding-top: 20px;
+}
+
+.article-title-list a {
+	color: black;
+}
+
+.card-body-style {
+	border-top: 1px solid #eaeaea;
 }
 
 footer {
