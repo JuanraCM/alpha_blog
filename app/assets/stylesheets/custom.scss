@@ -2,7 +2,6 @@
 
 .form-title {
 	margin: 40px;
-	margin-bottom: 60px;
 	text-align: center;
 }
 
@@ -46,6 +45,28 @@
 
 #btn-sign-up {
 	margin-top: 300px;
+}
+
+#btn-create {
+	margin: 10px;
+	margin-bottom: 20px;
+}
+
+#errors-panel h3, li{
+	color: #ff3838;
+}
+
+#message-dialog {
+	margin: 10px;
+}
+
+#description-container {
+	padding: 20px;
+}
+
+.article-actions {
+	border-top: 1px solid #eaeaea;
+	padding-top: 20px;
 }
 
 footer {
