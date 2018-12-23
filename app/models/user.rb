@@ -12,4 +12,5 @@ class User < ApplicationRecord
             uniqueness: { case_sensitive: false },
             format: { with: EMAIL_REGEX }
 
+  has_secure_password
 end
