@@ -12,6 +12,13 @@
 				<div class="card-body card-body-style">
 					<%= truncate(article.description, length: 100) %>
 				</div>
+				<div class="article-details">
+					<small>
+						 <%= "Created by: #{article.user.username}" if article.user %>
+							<%= time_ago_in_words(article.created_at) %> ago, 
+							Updated: <%= time_ago_in_words(article.updated_at) %> ago
+					</small>
+				</div>
 				<div class="article-actions">
 					<%= link_to "Edit article", edit_article_path(article), class: "btn btn-sm btn-primary" %>
 					<%= link_to "Delete this article", article_path(article), class: "btn btn-sm btn-danger", method: :delete, data: {confirm: "Are you sure?"}%>
