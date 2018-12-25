@@ -18,4 +18,8 @@
 
 	<% end %>
 
+	<div class="nav-pages">
+		<%= will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+	</div>
+
 </div>
