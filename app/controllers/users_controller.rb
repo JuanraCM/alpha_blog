@@ -23,7 +23,10 @@ class UsersController < ApplicationController
   end
 
   def edit
-    
+    if current_user != @user
+      flash[:danger] = "You are not allowed to see this page"
+      redirect_to articles_path
+    end
   end
 
   def update
