@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
     if @user.update(user_params)
       flash[:success] = "User was successfully updated!"
-      redirect_to articles_path
+      redirect_to users_path
     else
       render 'edit'
     end
@@ -65,8 +65,9 @@ class UsersController < ApplicationController
   end
 
   def require_admin
-    if logged_in? && !current_user.admin?
+    if !logged_in? || !current_user.admin?
       flash[:danger] = "Only admin users can perform that action!"
+      redirect_to users_path
     end
   end
 end

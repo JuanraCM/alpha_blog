@@ -7,13 +7,16 @@
 		<ul class="listing">
 			<div class="flex-row">
 				<div id="description-container" class="card card-body col-md-4 offset-md-4 bg-light">
+					<% if user.admin? %>
+						<li><small style="float: left;">Admin Account</small></li>
+					<% end %>
 					<li><%= link_to gravatar_for(user), user_path(user) %></li>
 					<li class="article-title">
 					<%= link_to user.username, user_path(user) %>
 					</li>
 					<li><small><%= pluralize(user.articles.count, "article") if user.articles %></small></li>
 					<li>
-						<%= link_to "Delete this user", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete #{user.username} and all the articles created?"} %>
+						<%= (link_to "Delete this user", user_path(user), method: :delete, data: { confirm: "Are you sure you want to delete #{user.username} and all the articles created?"}) if logged_in? && user != current_user %>
 					</li>
 				</div>
 			</div>
