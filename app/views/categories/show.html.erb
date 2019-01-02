@@ -1,0 +1,7 @@
+<h1 class="form-title"><%= "Category: " + @category.name %></h1>
+
+<%= render 'articles/articles', obj: @category_articles %>
+
+<div class="nav-pages">
+	<%= will_paginate(@category_articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+</div>

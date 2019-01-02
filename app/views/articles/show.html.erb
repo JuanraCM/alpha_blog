@@ -4,6 +4,10 @@
 	<hr>
 	<p><%= simple_format(@article.description) %></p>
 
+	<% if @article.categories.any? %>
+		<p>Categories: <%= render @article.categories %></p>
+	<% end %>
+
 	<div class="article-actions">
 		<% if logged_in? && (current_user == @article.user || current_user.admin?) %>
 			<%= link_to "Edit article", edit_article_path, class: "btn btn-sm btn-primary" %>
