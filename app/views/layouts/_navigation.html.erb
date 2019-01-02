@@ -16,6 +16,28 @@
         <li class="nav-item">
             <%= link_to "Our Logged Users", users_path, class: "nav-link" %>
         </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">
+                  <%= link_to "All Categories", categories_path, class: "dropdown-item" %>
+              </a>
+              <div class="dropdown-divider"></div>
+              <% Category.all.each do |category| %>
+                <a class="dropdown-item" href="#">
+                  <%= link_to category.name, category_path(category), class: "dropdown-item" %>
+                </a>
+              <% end %>
+              <% if logged_in? && current_user.admin? %>
+                <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">
+                    <%= link_to "Create a category", new_category_path, class: "dropdown-item" %>
+                  </a>
+              <% end %>
+            </div>
+          </li>
         <% if logged_in? %>
   
           <li class="nav-item dropdown">
@@ -23,7 +45,9 @@
               Your Profile
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to "View profile", user_path(current_user), class: "dropdown-item" %>
+              <a class="dropdown-item" href="#">
+                <%= link_to "View profile", user_path(current_user), class: "dropdown-item" %>
+              </a>
               <a class="dropdown-item" href="#">
                 <%= link_to "Edit my profile", edit_user_path(current_user), class: "dropdown-item" %>
               </a>
