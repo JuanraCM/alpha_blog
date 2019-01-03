@@ -1,5 +1,11 @@
 <h1 class="form-title"><%= "Category: " + @category.name %></h1>
 
+<% if logged_in? && current_user.admin? %>
+	<div align="center" style="margin-bottom: 10px;">
+		<span class="badge"><%= link_to "Edit category name", edit_category_path(@category) %></span>
+	</div>
+<% end %>
+
 <%= render 'articles/articles', obj: @category_articles %>
 
 <div class="nav-pages">
